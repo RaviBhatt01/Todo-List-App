@@ -8,6 +8,13 @@ class homepage extends StatefulWidget {
 }
 
 class _homepageState extends State<homepage> {
+
+  List<String> text =[
+    "Hello1"
+    "Hello2"
+  ];
+
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -60,22 +67,32 @@ class _homepageState extends State<homepage> {
         body: TabBarView(
           children: [
             Container(
-              color: Colors.red[100],
-              child: Center(child: Text('Hey')),
-            ),
-            Container(
               color: Colors.grey[100],
-              child: Center(child: Text('Hey2')),
+              // child: List<String> tasks =[],
             ),
             Container(
               color: Colors.blue[100],
-              child: Center(child: Text('Hey3')),
+              child: Center(child: Text('Hey2')),
             ),
             Container(
               color: Colors.green[100],
-              child: Center(child: Text('Hey45')),
+              child: Center(child: Text('Hey3')),
+            ),
+            Container(
+              color: Colors.red[100],
+              child: Center(child: Text('Hey4')),
             ),
           ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.blueGrey,
+          onPressed: () {},
+          child: Icon(
+            Icons.add,
+            color: Colors.lightGreenAccent,
+            size: 28,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );
