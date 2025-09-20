@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:todo_list/Pages/all.dart';
+import 'package:todo_list/Pages/completed.dart';
+import 'package:todo_list/Pages/favourites.dart';
+import 'package:todo_list/Pages/pending.dart';
+
 
 class homepage extends StatefulWidget {
   const homepage({super.key});
@@ -46,16 +51,18 @@ class _homepageState extends State<homepage> {
           ],
           bottom: TabBar(
             labelStyle: TextStyle(
-              fontSize: 14,
+              fontSize: 18,
               fontWeight: FontWeight.bold,
               color: Colors.white,
             ),
             unselectedLabelStyle: TextStyle(
-              fontSize: 14,
+              fontSize: 15,
               fontWeight: FontWeight.bold,
               color: Colors.white54,
             ),
             indicatorColor: Colors.white,
+            labelPadding: EdgeInsets.symmetric(horizontal: 7), // provides padding to the tab headings
+
             tabs: [
               Tab(text: "All"),
               Tab(text: "Completed"),
@@ -67,33 +74,20 @@ class _homepageState extends State<homepage> {
         body: TabBarView(
           children: [
             Container(
-              color: Colors.grey[100],
-              // child: List<String> tasks =[],
+              child: allLists(),
             ),
             Container(
-              color: Colors.blue[100],
-              child: Center(child: Text('Hey2')),
+              child: completedLists(),
             ),
             Container(
-              color: Colors.green[100],
-              child: Center(child: Text('Hey3')),
+              child: pendingLists(),
             ),
             Container(
-              color: Colors.red[100],
-              child: Center(child: Text('Hey4')),
+              child: favouriteLists(),
             ),
           ],
         ),
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.blueGrey,
-          onPressed: () {},
-          child: Icon(
-            Icons.add,
-            color: Colors.lightGreenAccent,
-            size: 28,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+
       ),
     );
   }
