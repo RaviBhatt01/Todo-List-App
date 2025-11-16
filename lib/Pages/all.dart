@@ -12,7 +12,6 @@ class _allListsState extends State<allLists> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.grey[100],
-    // child: ,
     );
   }
 }
